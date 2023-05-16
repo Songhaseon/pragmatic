@@ -10,15 +10,21 @@
 
         <form action="/account/hello_world/" method="post">
             {% csrf_token %}
-            <input type="text" name="input_text" placeholder="name">
+            <div>
+            <input type="text" name="hello_world_input">
+            </div>
+            <div>
             <input type="submit" value="POST" class="btn btn-primary">
+            </div>
         </form>
-        <div>
-            {% if text %}
-            {{ text }}
-            {% endif %}
-        </div>
 
+        {% if hello_world_output %}
+        <h1>
+
+            {{ hello_world_output.text }}
+
+        </h1>
+        {% endif %}
 
     </div>
 
