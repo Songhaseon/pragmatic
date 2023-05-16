@@ -2,15 +2,22 @@
 
 {% block content %}
 
-    <div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
+    <div style="border-radius: 1rem; margin: 2rem; text-align: center">
 
-        <h1>testing</h1>
-        <form action="">
+        <h1 style="font-family: 'Lobster', cursive">
+            Hello World LIST!
+        </h1>
 
-
-
-
+        <form action="/account/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="text" name="input_text" placeholder="name">
+            <input type="submit" value="POST" class="btn btn-primary">
         </form>
+        <div>
+            {% if text %}
+            {{ text }}
+            {% endif %}
+        </div>
 
 
     </div>
